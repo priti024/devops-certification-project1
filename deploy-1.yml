@@ -1,0 +1,29 @@
+pipeline { 
+ environment { 
+ AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID') 
+ AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY') 
+ } 
+ agent any 
+ stages { 
+ stage ('GetCode from SCM'){ 
+ steps{ 
+ git 'https://github.com/priti024/devops-certification-project1.git' 
+ } 
+ } 
+ stage ("Terraform init") { 
+ steps{ 
+ sh ('terraform init') 
+ } 
+ } 
+ stage('Terraform Plan') { 
+ steps { 
+ sh "terraform plan" 
+ } 
+ } 
+ stage('Terraform Apply') { 
+ steps { 
+ sh "terraform apply -auto-approve" 
+ } 
+ } 
+ } 
+}
