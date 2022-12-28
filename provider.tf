@@ -1,8 +1,8 @@
 provider "aws" {
-  region     = "us-east-2"
+  region     = "ap-south-1"
 }
 resource "aws_instance" "Test_Server" {
-  ami           = ami-005e54dee72cc1d00
+  ami           = ami-08eec94255d45165b
   key_name =  "Mumbai"
   instance_type = "t2.micro"
   user_data = file("docker.sh")
