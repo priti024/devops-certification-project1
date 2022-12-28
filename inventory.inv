@@ -1,2 +1,2 @@
 [Test_server]
-172.31.0.19 ansadmin=ec2-user
+172.31.4.65 ansible_user=ec2-user
