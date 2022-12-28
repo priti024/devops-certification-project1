@@ -3,7 +3,7 @@ provider "aws" {
 }
 resource "aws_instance" "Test_Server" {
   ami           = "ami-08eec94255d45165b"
-  key_name =  "Mumbai"
+  key_name =  "new_key"
   instance_type = "t2.micro"
   user_data = file("docker.sh")
   tags = {
