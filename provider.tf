@@ -7,6 +7,6 @@ resource "aws_instance" "Test_Server" {
   instance_type = "t2.micro"
   user_data = file("docker.sh")
   tags = {
-   Name = "Test_Server"
+   Name = "Test_server"
   }
 }
